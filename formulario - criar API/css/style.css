@@ -1,0 +1,199 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-image: url(../imagens/fundoGeometrico1.jpg);
+  background-size: cover;
+}
+#boxPrincipal{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 5%;
+  flex-wrap: wrap;
+}
+#areaCadastro, #areaBusca{
+  background-color: aquamarine;
+  width: 30%;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2%;
+  background-color: rgba(240, 255, 255, 0.438);
+  font-family: 'Public Sans', sans-serif;
+  margin-bottom: 5%;
+}
+
+#areaCadastro fieldset, #areaBusca fieldset{ 
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+#areaBusca fieldset{
+  flex-direction: row;
+  justify-content: center;
+}
+
+#areaCadastro fieldset legend, #areaBusca fieldset legend{
+  width: 20%;
+}
+#areaCadastro fieldset legend img, #areaBusca fieldset legend img{
+  margin-left: 8%;
+  width: 100%;
+}
+
+input{
+  font-size: 100%;
+  padding: 0.3em;
+  margin: 1%;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+  width: 80%;
+  text-align: center;
+}
+
+#nome, #sobrenome, #cargo, #dataNascimento, #cpf, #telefone, #email, #senha{
+  width: 60%;
+}
+#areaCadastro button{
+  padding: 2%;
+}
+
+#buscador{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+button{
+  padding: 2%;
+  border-radius: 10px;
+  background-color: aliceblue;
+  border: 1px solid darkgray;
+  color: rgb(61, 61, 61);
+  font-size: 1em;
+  font-family: 'Public Sans', sans-serif;
+  box-shadow: 2.5px 2.5px 2.5px rgb(61, 61, 61);
+  translate: 0.4s;
+  margin: 5%;
+}
+button:hover{
+  box-shadow: 1px 1px 1px rgb(61, 61, 61);
+  background-color: rgb(204, 252, 252);
+}
+.boxCheckbox{
+  display: flex;
+  flex-direction: column;
+}
+.feminino, .masculino{
+  display: flex;
+}
+
+
+#mostrar {
+  width: 80%;
+  background-color: rgba(240, 255, 255, 0.438);
+  font-size: 1em;
+  border: 2px solid gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#mostrar #dados{
+  width: 75%;
+}
+#mostrar p{
+  margin: 4%;
+}
+#mostrar .form{
+  display: flex;
+}
+#areaBusca input, #buscador button, #buscador button img{
+  max-height: 1.2em;
+  margin: 0;
+}
+
+#buscador button{
+  max-height: 3em;
+  width: 2.8em;
+}
+#areaBusca, #areaBuscaBox1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#sexoFeminino, #sexoMasculino{
+  width: 15%;
+}
+#sexoFeminino,.boxCheckbox label, #sexoMasculino{
+  margin-left: 1%;
+  margin-bottom: 10%;
+}
+
+#administrador{
+  display: flex;
+  justify-content: space-around;
+}
+
+#boxAreaEstatisticas{
+  background-color: rgba(240, 255, 255, 0.438);
+  width: 30%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+#areaEstatisticas{
+  background-color: rgba(240, 255, 255, 0.438);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Public Sans', sans-serif;
+  border: 2px solid gray;
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
+#areaEstatisticas #boxBtnsExibir{
+  display: flex;
+  justify-content: center;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }  
+  #mostrar, #mostrar * {
+    visibility: visible;
+  }
+  #btnApagar, #btnImprimir{
+    visibility: hidden;
+    display: none;
+  }
+  #mostrar {
+    position: fixed;
+    left: 25%;
+    top: 0;
+    width: 50%;
+    border: 2px dashed gray;
+    border-radius: 10px;
+  }
+  #mostrar #dados{
+    width: 80%;
+  }
+  
+}
+
+@media only screen and (max-width:1200px){ 
+  #boxPrincipal{
+    flex-direction: column;
+  }
+}
+

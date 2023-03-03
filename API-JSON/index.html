@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Rubik+Dirt&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Fake-API</title>
+</head>
+<body>
+    <header>
+        <img src="imagens/iconeDisco.png" alt="" id="logo">
+        <p>E-CommerceMusic</p>
+        <nav>
+            <div class="dropdown">
+                <button class="dropbtn">Bandas e artistas</button>
+                <div class="dropdown-content">
+                  <a onclick="escolheBanda('morat')" value="morat" >Morat</a>
+                  <a onclick="escolheBanda('timo')" value="timo">Timo</a>
+                  <a onclick="escolheBanda('CharlieRodd')" value="harlie Rodd">Charlie Rodd</a>
+                </div>
+              </div>
+
+            <a href="#">Albúns</a>
+            <a href="#">Generos</a>
+        </nav>
+    </header> 
+    <main>
+        <div class="boxMusica">
+            <h3 id="categoria"></h3>        
+            <div class="areaMusica">
+                <div class="musica">
+                    <div id="musica1"></div>
+                </div>
+                <div class="musica">
+                    <div id="musica2"></div>
+                </div>
+                <div class="musica">
+                    <div id="musica3"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://github.com/JessicaMoreiraS"><p>@JéssicaM</p></a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

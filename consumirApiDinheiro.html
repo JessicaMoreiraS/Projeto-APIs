@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!--<meta http-equiv="refresh" content="30"/>-->
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="headerDolar">
+        <div class="tituloDolar">
+            <h1>Dolar</h1>
+            <p>Acompanhe o valor do Dolar e realize converssões monetarias</p>
+        </div>
+        <nav>
+            <a href="index.html" target="_blank">Home</a>
+            <a href="https://github.com/JessicaMoreiraS" target="_blank">GitHub</a>
+            <a href="#" target="_blank">WhatsApp</a>
+        </nav>
+    </header>
+
+    <main class="mainDolar">
+        <div class="boxValor">
+            <div class="cotacao">
+                <div>
+                    <select name="selecionaMoeda" id="selecionaMoeda" onchange="recarregar()" class="decorar">
+                        <option value="dolar">Dolar</option>
+                        <option value="euro">Euro</option>
+                        <option value="biticoin">Biticoin</option>
+                    </select>
+                </div>
+                <div class="valorAtual">
+                    <h3>Valor atual:</h3>
+                    <input type="text" id="valor" readonly class="decorar">
+                </div>
+            </div>
+
+            <div class="conversao">
+                <div>
+                    <div>
+                        <p>De:</p>
+                        <select name="valorDe" id="valorDe" onchange="conversao()" class="decorar">
+                            <option value="real">Real</option>
+                            <option value="dolar">Dolar</option>
+                            <option value="euro">Euro</option>
+                            <option value="biticoin">Biticoin</option>
+                        </select>
+                        
+                        <input type="text" id="valorParaConversao" onkeyup="conversao()" class="decorar">
+                    </div>
+
+                    <div>
+                        <p>Para:</p>
+                        <select name="valorPara" id="valorPara" onchange="conversao()" class="decorar">
+                            <option value="real">Real</option>
+                            <option value="dolar">Dolar</option>
+                            <option value="euro">Euro</option>
+                            <option value="biticoin">Biticoin</option>
+                        </select>
+                        <input type="text" id="resultadoConversao" readonly class="decorar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<script>
+    /*var vetorMoedas = ['dolar', 'euro', 'biticoin','real']
+    var vetorDinheiro = ['USDBRL', 'EURBRL', 'BTCBRL']*/
+
+    if(document.getElementById("valor").value != null){
+        recarregar();
+    }
+
+    /*function atualizarGrafico(){
+        if(dinheiro.low != dinheiro.bid && dinheiro.high != dinheiro.bid){
+            document.getElementById("valorMinimo").innerHTML= dinheiro.low
+            document.getElementById("valorAtual").innerHTML= dinheiro.bid
+            document.getElementById("valorMaximo").innerHTML= dinheiro.high
+        }
+        if(dinheiro.low != dinheiro.bid && dinheiro.high == dinheiro.bid){
+            document.getElementById("valorMinimo").innerHTML= dinheiro.low
+            document.getElementById("valorAtual").innerHTML= dinheiro.bid
+        }
+        if(dinheiro.low == dinheiro.bid && dinheiro.high != dinheiro.bid){
+            document.getElementById("valorAtual").innerHTML= dinheiro.bid
+            document.getElementById("valorMaximo").innerHTML= dinheiro.high
+        }
+    }*/
+
+    window.setTimeout('recarregar()', 30000);
+    
+    var dinheiro;
+    function recarregar(){
+        fetch(`https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL`).then(response=>{
+            return response.json()
+        }).then(economia => {
+
+
+            /*for(a=0; a<vetorDinheiro.length; a++){
+                if(document.getElementById("selecionaMoeda").value == vetorMoedas[a]){
+                    console.log(vetorDinheiro[a])
+                    dinheiro = economia.vetorDinheiro[a].bid;
+                }
+            }*/
+
+
+            if(document.getElementById("selecionaMoeda").value == "dolar"){
+                dinheiro = economia.USDBRL //o bid se refere ao valor atual
+            }
+            if(document.getElementById("selecionaMoeda").value == "euro"){
+                dinheiro = economia.EURBRL;   
+            }
+            if(document.getElementById("selecionaMoeda").value == "biticoin"){
+                dinheiro = economia.BTCBRL;      
+            } 
+            document.getElementById("valor").value = arredondar(dinheiro.bid); 
+            //document.getElementById("moeda").innerHTML = economia.USDBRL.code;
+            console.log(economia);
+            /*atualizarGrafico(); */
+        })
+    }
+
+
+    function conversao(){
+        fetch(`https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL`).then(response=>{
+            return response.json()
+        }).then(economia => {
+
+            var valorParaConversao = parseFloat(document.getElementById("valorParaConversao").value);
+
+            if(document.getElementById('valorParaConversao').value != ""){
+                
+                if(document.getElementById("valorDe").value == document.getElementById("valorPara").value){
+                    document.getElementById("resultadoConversao").value =valorParaConversao;
+                }
+
+                if(document.getElementById("valorDe").value == "real"){  
+                    if(document.getElementById("valorPara").value == "dolar"){
+                        var valorMoeda = economia.USDBRL.bid;
+                        let resultado = valorParaConversao/valorMoeda;
+                        document.getElementById("resultadoConversao").value = arredondar(resultado);
+                    }
+                    if(document.getElementById("valorPara").value == "euro"){
+                        var valorMoeda = economia.EURBRL.bid;
+                        let resultado = valorParaConversao/valorMoeda;
+                        document.getElementById("resultadoConversao").value = arredondar(resultado);
+                    }
+                    if(document.getElementById("valorPara").value == "biticoin"){
+                        var valorMoeda = economia.BTCBRL.bid;
+                        let resultado = valorParaConversao/valorMoeda;
+                        document.getElementById("resultadoConversao").value = resultado;
+                    }
+                }
+
+                if(document.getElementById("valorDe").value == "dolar"){
+                    if(document.getElementById("valorPara").value == "real"){
+                        document.getElementById("resultadoConversao").value = arredondar(economia.USDBRL.bid*valorParaConversao);
+                    }
+                    if(document.getElementById("valorPara").value == "euro"){
+                        var valorEmReais = economia.USDBRL.bid * valorParaConversao;
+                        let resultado = valorEmReais/economia.EURBRL.bid;
+                        document.getElementById("resultadoConversao").value = arredondar(resultado);
+                    }
+                    if(document.getElementById("valorPara").value == "biticoin"){
+                        var valorEmReais = economia.USDBRL.bid * valorParaConversao;
+                        let resultado = valorEmReais/economia.BTCBRL.bid;
+                        document.getElementById("resultadoConversao").value = resultado;
+                    }
+                }
+
+                if(document.getElementById("valorDe").value == "euro"){
+                    if(document.getElementById("valorPara").value == "real"){
+                        document.getElementById("resultadoConversao").value = arredondar(economia.EURBRL.bid*valorParaConversao);
+                    }
+                    if(document.getElementById("valorPara").value == "dolar"){
+                        var valorEmReais = economia.EURBRL.bid * valorParaConversao;
+                        let resultado = valorEmReais/economia.USDBRL.bid;
+                        document.getElementById("resultadoConversao").value = arredondar(resultado);
+                    }
+                    if(document.getElementById("valorPara").value == "biticoin"){
+                        var valorEmReais = economia.EURBRL.bid * valorParaConversao;
+                        let resultado = valorEmReais/economia.BTCBRL.bid;
+                        document.getElementById("resultadoConversao").value = resultado;
+                    }
+                }
+
+                if(document.getElementById("valorDe").value == "biticoin"){
+                    if(document.getElementById("valorPara").value == "real"){
+                        document.getElementById("resultadoConversao").value = arredondar(economia.BTCBRL.bid*valorParaConversao);
+                    }
+                    if(document.getElementById("valorPara").value == "dolar"){
+                        var valorEmReais = economia.BTCBRL.bid * valorParaConversao;
+                        let resultado = valorEmReais/economia.USDBRL.bid;
+                        document.getElementById("resultadoConversao").value = arredondar(resultado);
+                    }
+                    if(document.getElementById("valorPara").value == "euro"){
+                        var valorEmReais = economia.BTCBRL.bid * valorParaConversao;
+                        let resultado = valorEmReais/economia.EURBRL.bid;
+                        document.getElementById("resultadoConversao").value = arredondar(resultado);
+                    }
+                }
+                
+                
+            }
+        })
+    }
+
+    function arredondar(n) {
+        return (Math.round(n * 100) / 100).toFixed(2);
+    }
+</script>
+</html>

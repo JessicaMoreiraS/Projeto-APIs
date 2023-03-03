@@ -1,0 +1,356 @@
+*{
+    margin: 0;
+    border: 0;
+}
+
+.boxHeaderIndex{ 
+    background-color: aqua;
+    border-bottom: 2px solid white; 
+    height: 30vh;
+    z-index: -1;
+    font-family: 'Poppins', sans-serif;
+}
+.matrix{
+    z-index: -1;
+}
+.boxCabecalho{
+    display: flex;
+    background-color: black;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+    min-width: 300px;
+    position: relative;
+    margin-top: -200px;
+    margin-left: 37%;
+    z-index: 1;
+    height: 190px;
+    border-radius: 10px;
+    color: #fff;
+    border: 2px double rgb(0, 138, 0);
+    box-shadow: 3px 3px 10px rgb(0, 177, 0);
+}
+.boxCabecalho h1, .boxCabecalho p{
+    text-align: center;
+}
+nav{
+    background-color: white;
+    margin-bottom: 0;
+    padding: 1%;
+    font-size: 125%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 2.5vh;
+    width: 98%;
+    font-family: 'Poppins', sans-serif;
+}
+nav a{
+    margin: 0 4%;
+}
+
+.mainIndex{
+    overflow: hidden;
+    /**/
+    background-color: black;
+    min-height: 70vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.areaDeProjetos{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    min-width: 300px; 
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
+}
+.projeto{
+    margin: 4%;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    width: 20%;
+    max-height: 400px;
+    padding: 2%;
+    box-shadow: 5px 5px 30px #fff;
+}
+.projeto h3{
+    font-size: 150%;
+    text-align: center;
+    margin-bottom: 5%;
+}
+.projeto img{
+    width: 100%;
+    margin-left: 0 10%;
+}
+.projeto p{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+}
+.projeto a button{
+    background-color: aliceblue;
+    padding: 2% 5%;
+    font-size: 125%;
+    border: 2px solid rgb(201, 201, 201);
+    border-radius: 50px;
+    margin-left: 38%;
+    margin-top: 5%;
+}
+.projeto a button:hover{
+    background-color: rgb(0, 177, 0);
+}
+
+footer{
+    background-color:rgb(0, 177, 0);
+    height: 5.5vh;
+    color: black;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+footer a{
+    color: #fff;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/*                                   Dolar*/
+.headerDolar{
+    height: 20vh;
+    font-family: 'Poppins', sans-serif;
+}
+.tituloDolar{
+    height: 13vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(244, 241, 232);
+}
+.mainDolar{
+    background-image: url(../imagens/seamless-background-money-260nw-250231414.jpg);
+    height: 83.5vh;
+    display: flex;
+    justify-content: center;
+}
+.boxValor{
+    width: 50%;
+    height: 70%;
+    background-color: rgb(174, 240, 218);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    border-radius: 10px;
+    border: 2px solid rgb(54, 230, 171);
+}
+#grafico{
+    background-color: rgb(244, 241, 232);
+    width: 80%;
+}
+#grafico #valorMinimo{
+    margin-left: 0%;
+}
+#grafico #valorAtual{
+    margin-left: 0;
+}
+#grafico #valorMaximo{
+    margin-left: 63%;
+}
+#grafico p{
+    width: 100%;
+    background-color: red;
+    height: 40%;
+}
+
+/*                                   CEP*/
+.bodyCep{
+    background-color: rgb(59, 47, 61);
+}
+.headerCep{
+    background-color: rgb(34, 35, 99);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 20vh;
+}
+.headerCep .tema{
+    width: 90%;
+    text-align: center;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+}
+.boxEndereco{
+    background-image: url(../imagens/fundoCidade.jpg);
+    background-size: cover;
+    height: 72.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+fieldset{
+    background-color: rgba(37, 45, 139, 0.704);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 350px;
+    margin: 0 auto;
+    border: 2px dashed white;
+    padding-bottom: 2%;
+}
+fieldset legend{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(37, 45, 139);
+    font-size: 200%;
+    color: white;
+    font-weight: bold;
+    font-family: 'Segoe UI','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.boxImputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+.boxImputs label{
+    color: white;
+    font-family: 'Segoe UI','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.boxImputs .box1{
+    width: 40%;
+}
+.imputBox{
+    position: relative;
+    display: flex;
+}
+.boxImputs .box1 span{
+    position: absolute;
+    color: rgb(201, 201, 201);
+    pointer-events: none;
+    font-size: 1em;
+    padding: 10px;
+    /*color: rgb(59, 47, 61);*/
+    transition: 0.5s;
+}
+.boxImputs input{
+    width: 100%;
+    height: 18%;
+    text-align: center;
+    font-family: 'Segoe UI','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 110%;
+    outline: none;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 5px;
+    font-size: 1.3em;
+    padding: 5%;
+    background-color: rgba(37, 45, 139, 0.412);
+    color: white;
+}
+.boxImputs input:valid ~ span,
+.boxImputs input:focus ~ span{
+    color: white;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.95em;
+    padding: 0 10px;
+    background-color: rgb(37, 45, 139);
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+.boxImputs input:valid,
+.boxImputs input:focus{
+    border: 1px solid white;   
+}
+
+.buscarMaps{
+    width: 25%;
+    height: 2%;
+    margin: 0 auto;
+    font-size: 110%;
+    padding: 1%;
+    border-radius: 5px;
+    display: flex;justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(201, 201, 201);
+}
+.buscarMaps:hover{
+    background-color: rgb(59, 47, 61);
+    color: white;
+}
+.footerCep{
+    background-color: rgb(59, 47, 61);
+    color: white;
+}
+
+@media only screen and (max-width:700px){
+    .boxImputs{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    fieldset{
+        width: 50%;
+        min-width: 250px;
+    }
+    .boxImputs div{
+        width: 80%;
+    }
+    .buscarMaps{
+        width: 50%;
+    }
+}
+
+.decorar{
+    border-radius: 10px;
+    font-size: 120%;
+    padding: 0.2em;
+    border: 2px solid rgb(54, 230, 171);
+    margin: 1%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.conversao div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.coversao div div{
+    width: 40%;
+}
+.conversao input{
+    width: 100%;
+}
+.conversao p, .valorAtual h3{
+    font-size: 110%;
+    margin: 3%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.cotacao div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.paragrafo{
+    color: #fff;
+    text-align: justify;
+    margin: 5% 5% 0 5%;
+    font-size: 130%;
+    font-family: 'Poppins', sans-serif;
+}

@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #00A287;
+    color: #fff;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rubik Dirt', cursive;
+}
+#logo{
+    width: 5%;
+}
+h1{
+    font-size: 220%;
+}
+nav{
+    width: 100%;
+    background-color: #fff;
+    font-size: 1.1em;
+    min-height: 3vh;
+    margin-top: 4.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+nav a{
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
+    color: #f47100;
+    margin: 0 1%;
+}
+
+
+.dropbtn {
+    background-color: #F38D29;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #E94709;}
+
+
+main{
+    background-image: url(../imagens/fundo4.png);
+    background-size: cover;
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.boxMusica{
+    margin: 2%;
+}
+.boxMusica h3{
+    color: #fff;
+}
+
+@media only screen and (min-width: 600px) {
+    main{
+        min-height: 200%;
+    }
+}
+footer{
+    background-color: #00A287;
+    min-height: 5vh;
+    display: flex;
+    align-items: center;
+}
+.areaMusica{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.musica{
+    width: 20%;
+    background-color: #fff;
+    box-shadow: 20px 20px 40px 15px #fffbd1;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'League Spartan', sans-serif;
+    min-width: 250px;
+}
+.musica:hover{
+    box-shadow: 10px 10px 20px 7px #fffbd1;
+    background-color: #fffbd1;
+}
+.musica img{
+    width: 100%;
+    border-radius: 5px 5px 0 0 ;
+}
+.musica p{
+    text-align: center;
+    padding: 2%;
+    font-size: 110%;
+}
+footer a{
+    color: #fff;
+    text-decoration: none;
+}
+#categoria{
+    font-size: 250%;
+    margin-left: 10%;
+    margin-bottom: 2%;
+}
