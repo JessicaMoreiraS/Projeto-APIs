@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(imagens/8238530\ -\ Copia.jpg);
+    background-size: cover;
+    font-family: 'Itim', cursive;
+}
+#alinhar{
+    display: flex;
+    justify-content: center;
+}
+header{
+    width: 50%;
+    height: 100vh;
+}
+.boxHeader{
+    background-color: rgb(107, 238, 194);
+    height: 44vh;
+    width: 50vh;
+    min-width: 200px;
+    margin-left: 70%;
+    margin-top: 18vh;
+    font-size: 150%;
+    text-align: center;
+    box-shadow: 20px 20px 50px gray;
+    position: relative;
+    z-index: 1;
+}
+.boxHeader h1, .boxHeader p{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+main{
+    width: 50%;
+    height: 100vh;
+}
+.boxMain{
+    background-color: rgb(254, 208, 53);
+    margin-left: -10vh;
+    margin-top: 45vh;
+    padding-bottom: 5%;
+    width: 50%;
+    min-width: 250px;
+    position: relative;
+    z-index: 2;
+    min-height: 20vh;
+    box-shadow: 20px 20px 50px gray;
+}
+.boxMain input{
+    margin: 5% 3.5%;
+    border-radius: 10px;
+    font-size: 150%;
+    padding: 1%;
+    text-align: center;
+    width: 90%;
+    border: none;
+}
+.boxMain button{
+    font-size: 100%;
+    width: 25%;
+    padding: 2%;
+    border-radius: 10px;
+    font-family: 'Itim', cursive;
+    background-color: rgb(107, 238, 194);
+    border-color: rgb(125, 241, 203);
+}
+.btns{
+    display: flex;
+    justify-content: space-around;
+}
+.dados{
+    margin: 0 auto;
+    width: 70%;
+}
+.boxMain p{
+    text-align: start;
+    display: inline;
+}
+.boxMain img{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 8%;
+}
+
+@media only screen and (max-width:700px){ 
+    body{
+        background-image: url(imagens/8238530.jpg);
+        background-repeat: no-repeat;
+    }
+    .boxHeader{
+        margin: 0 auto;
+        margin-left: 2vh;
+        margin-top: 12vh;
+    }
+    .boxMain{
+        margin-left: -12vh;
+        
+    }
+}
+

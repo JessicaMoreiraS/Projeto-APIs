@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" media="(max-width: 800px)" href="example.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+    <title>API - FAKE</title>
+</head>
+<body>
+    <div id="alinhar">
+        <header>
+            <div class="boxHeader">
+                <h1>Usando APIs internas</h1>
+                <p>incira o CPF da pessoa desejada para ter acesso as informações</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="boxMain">
+                <input type="text" id="escolha" maxlength=11/>
+                <div class="btns">
+                    <button type="submit" id="buscar" onclick="buscar()">Buscar</button>
+                    <button type="reset" id="limpar" onclick="limpar()">Limpar</button>
+                </div>
+
+                <div class="dados">
+                    <br>
+                    <label for="" id="labelNome"></label>
+                    <p id="nome"></p><br>
+                    <label for="" id="labelCpf"></label>
+                    <p id="cpf"></p><br>
+                    <label for="" id="labelIdade"></label>
+                    <p id="idade"></p><br>
+                    <label for="" id="labelEscolaridade"></label>
+                    <p id="escolaridade"></p><br>
+                    <label for="" id="labelProfissao"></label>
+                    <p id="profissao"></p>
+                    <p id="imagem"></p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+<!--Image by <a href="https://www.freepik.com/free-vector/hand-drawn-abstract-background_34881811.htm#query=wallpaper&position=8&from_view=keyword">Freepik</a>-->
+

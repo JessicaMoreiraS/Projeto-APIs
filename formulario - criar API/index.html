@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <main>
+        <div id="boxPrincipal">
+            <div id="areaCadastro">
+                <fieldset>
+                    <h3>Cadastro</h3>
+                    <legend><img src="imagens/add_user_profile_person_avatar_icon_196535.png" alt=""></legend>
+                    <label for="">Nome:</label>
+                    <input type="text" id="nome" required>
+                    <label for="">Sobrenome:</label>
+                    <input type="text" id="sobrenome" required>
+                    <label for="">Cargo:</label>
+                    <input type="text" id="cargo" required>
+                    <label for="">Data de nascimento:</label>
+                    <input type="date" id="dataNascimento" required>
+                    <label for="">CPF:</label>
+                    <input type="number" id="cpf" maxlength="8" required>
+
+                    <div class="boxCheckbox">
+                        <label for="">Sexo:</label>
+                        <div class="feminino">
+                            <input type="checkbox" id="sexoFeminino" value="feminino" onclick="escolherFeminino()">
+                            <label for="sexoFeminino">Feminino</label>
+                        </div>
+                        <div class="masculino">
+                            <input type="checkbox" id="sexoMasculino" value="masculino" onclick="escolherMasculino()">
+                            <label for="sexoMasculino">Masculino</label>
+                        </div>
+                    </div>
+
+                    <label for="">Telefone:</label>
+                    <input type="tel" id="telefone" required>
+                    <label for="">Email:</label>
+                    <input type="email" id="email" required>
+                    <label for="">Senha:</label>
+                    <input type="password" id="senha" required>
+                
+                    <button type="submit" onclick="enviar()">Enviar</button>
+                </fieldset>
+            </div>
+
+            <div id="areaBusca">
+                <fieldset id="areaBusca">
+                    <legend><img src="imagens/find_user_profile_person_avatar_icon_196545.png" alt=""></legend>
+                    <div id="box1">
+                        <h3>Busca por CPF</h3>
+                        <div id="buscador">
+                            <input type="number" maxlength="11" id="cpfBuscar">
+                            <button onclick="buscar()"><img src="imagens/magnifier-1_icon-icons.com_56924.ico" alt="Buscar"></button>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div id="mostrar"></div>
+            </div>
+        </div>
+
+        <div id="administrador">
+            <button onclick="acessarAdministrador()" id="btnAdministrador">Acessar a área do administrador</button>
+            <div id="boxAreaEstatisticas">
+                <div id="areaEstatisticas"></div>
+            </div>
+        </div>
+    </main>
+
+
+   
+
+    <script src="js/script.js"></script>
+</body>
+</html>
